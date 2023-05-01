@@ -1,48 +1,43 @@
-import React, { useState, useEffect } from "react";
-import TodoItem from "./TodoItem";
-import { Bars } from "react-loader-spinner";
+import React, { useState, useEffect } from "react"; // Importing necessary components from React
+import TodoItem from "./TodoItem"; // Importing TodoItem component
+import { Bars } from "react-loader-spinner"; // Importing Bars component from react-loader-spinner library
 
-function TodoContainer({ addedTask }) {
-	const [todos, setTodos] = useState([]);
-	const [loading, setLoading] = useState(false);
-	const [newTask, setNewTask] = useState(addedTask);
-	// console.log(addedTask);
+function TodoContainer({ addedTask }) { // Creating TodoContainer component with addedTask as a prop
+	const [todos, setTodos] = useState([]); // Initializing todos as an empty array and creating state with setTodos function
+	const [loading, setLoading] = useState(false); // Initializing loading state as false and creating state with setLoading function
+	const [newTask, setNewTask] = useState(addedTask); // Initializing newTask state with addedTask prop and creating state with setNewTask function
 
-	useEffect(() => {
+	useEffect(() => { // Using useEffect hook to fetch data from an API endpoint when the component mounts
 		fetch("https://jsonplaceholder.typicode.com/todos")
 			.then((response) => response.json())
 			.then((json) => {
-				setTimeout(() => {
-					setTodos(json);
-					setLoading(true);
+				setTimeout(() => { // Adding a delay of 1 second to simulate loading time
+					setTodos(json); // Updating todos state with the fetched data
+					setLoading(true); // Updating loading state to true
 				}, 1000);
-				// console.log(json);
-			});
-	}, []);
 
-	// Whenever the new task is added then that task
-	useEffect(() => {
-		let taskAddedByUser = addedTask.map((task, index) => {
+			});
+	}, []); // Passing an empty dependency array to run useEffect only once when the component mounts
+
+	useEffect(() => { // Using useEffect hook to update newTask state whenever addedTask prop changes
+		let taskAddedByUser = addedTask.map((task, index) => { // Mapping through the addedTask prop to create TodoItem components
 			return <TodoItem task={task} key={index} />;
 		});
-		setNewTask(taskAddedByUser)
-	},  [newTask])
+		setNewTask(taskAddedByUser) // Updating newTask state with the created TodoItem components
+	},  [newTask]) // Adding newTask state as a dependency to run the effect whenever it changes
 
-	// console.log(todos);
-	// let todoItemsHtml = ;
-	// console.log(todoItemsHtml);
 	return (
 		<div className="todo-container">
-			{newTask}
-			{loading ? (
-				todos.map((task, index) => {
+			{newTask} // Rendering the TodoItem components added by the user
+			{loading ? ( // Conditional rendering based on the loading state
+				todos.map((task, index) => { // Mapping through todos array to create TodoItem components
 					return <TodoItem task={task} key={index} />;
 				})
 			) : (
-				<Bars height="80" width="80" color="#4fa94d" ariaLabel="bars-loading" visible={true} />
+				<Bars height="80" width="80" color="#4fa94d" ariaLabel="bars-loading" visible={true} /> // Displaying a loading spinner when the data is being fetched
 			)}
 		</div>
 	);
 }
 
-export default TodoContainer;
+export default TodoContainer; // Exporting TodoContainer component for use in other modules

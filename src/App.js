@@ -19,7 +19,6 @@ function App() {
 		newTask.value ="";
 	}
 
-	// const [newTask, setNewTask] = useState(addedTask);
 	return (
 		<div className="App">
 		<h1>To Do App</h1>
