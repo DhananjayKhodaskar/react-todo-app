@@ -1,3 +1,15 @@
+# React To Do App
+
+# Features
+* Fetches and shows todo items from the api - https://jsonplaceholder.typicode.com/todos
+* Added a todo item, make a POST call to the above url (from where you are fetching) and save the item in react state. (This will be a dummy request, you won’t be able to add items to the server. But the request is valid and will send you some data.).
+* Updates the item, makes a PUT call to the above url. (Again this is a dummy call).
+* Deletes an item, makes a DELETE call to the above url. (Again this is a dummy call).
+
+
+# Live At
+https://dhananjayk-react-todo.onrender.com
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +80,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Project Screenshots
+![Screenshot_1](https://user-images.githubusercontent.com/125384723/235469197-8540255b-1d6f-4edf-817c-5939778174a7.png)
+
+![Screenshot_2](https://user-images.githubusercontent.com/125384723/235469203-595cfbb2-af5f-464a-8d06-bb9eaaf1381d.png)
+
+![Screenshot_3](https://user-images.githubusercontent.com/125384723/235469211-0fcc1dbe-0a35-4784-b4c9-dc2bba17b9ff.png)
+
+## 🚦Version
+1.0 - Running Succesfully with above feature.
+## 👦Contact
+🔗 Author - @Dhananjay Khodaskar 
+
+ya695678@gmail.com / dhananjaykhodaskar27@gmai.com 
+
++91-7057218243
+
+✅ Linkedin ✅ https://www.linkedin.com/in/dhananjay-khodaskar-5333b2239 ✅
+
+✅ Github   ✅ https://github.com/DhananjayKhodaskar✅
