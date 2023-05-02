@@ -28,7 +28,7 @@ function TodoContainer({ addedTask }) { // Creating TodoContainer component with
 
 	return (
 		<div className="todo-container">
-			{newTask} // Rendering the TodoItem components added by the user
+			{newTask} 
 			{loading ? ( // Conditional rendering based on the loading state
 				todos.map((task, index) => { // Mapping through todos array to create TodoItem components
 					return <TodoItem task={task} key={index} />;
